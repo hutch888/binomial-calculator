@@ -1,20 +1,31 @@
-import { event } from "jquery";
+//import { event } from "jquery";
 import React, { useState, useRef } from "react";
 import "../App.css";
 import convertTheta from "./InputConverter";
 
 export default function Form1(props) {
-	const { theta1, setTheta1, n1, setN1, data1IsValid, setData1IsValid } = props;
-	const [thetaIsValid, setThetaIsValid] = useState(false);
-	const [nIsValid, setNIsValid] = useState(false);
+	const { setTheta1, setN1, setData1IsValid } = props;
+	//Refs to the inputs
 	const thetaRef = useRef();
 	const nRef = useRef();
+	const [thetaIsValid, setThetaIsValid] = useState(false);
+	const [nIsValid, setNIsValid] = useState(false);
+	//Flags to indicate whether the inputs are valid
+	/* 	var validationFlags = {
+		thetaIsValid: false,
+		nIsValid: false,
+	}; */
+
+	/* var thetaIsValid = false;
+	var nIsValid = false; */
 
 	const validate = (event) => {
 		event.preventDefault();
 		//Get the string values from the inputs
 		const thetaString = thetaRef.current.value;
 		const nString = nRef.current.value;
+		let localThetaValidFlag = false;
+		let localNValidFlag = false;
 
 		//Convert string values to numbers
 		let theta = convertTheta(thetaString);
@@ -22,13 +33,25 @@ export default function Form1(props) {
 
 		if (!isNaN(theta) && theta > 0 && theta < 1) {
 			setThetaIsValid(true);
+			localThetaValidFlag = true;
+			setTheta1(theta);
+		} else {
+			setThetaIsValid(false);
+			localThetaValidFlag = false;
 			setTheta1(theta);
 		}
+
 		if (!isNaN(n) && n > 0 && n < 51) {
 			setNIsValid(true);
+			localNValidFlag = true;
+			setN1(n);
+		} else {
+			setNIsValid(false);
+			localNValidFlag = false;
 			setN1(n);
 		}
-		setData1IsValid(thetaIsValid && nIsValid);
+		setData1IsValid(localThetaValidFlag && localNValidFlag);
+		console.log(`thetaIsValid = ${thetaIsValid} nIsValid = ${nIsValid}`);
 	};
 
 	const clear = (event) => {
@@ -49,13 +72,13 @@ export default function Form1(props) {
 			>
 				<div className="input-box">
 					<h5> Let &theta; = the probability of success for one attempt.</h5>
-					<label htmlFor="theta-1-input">
+					<label htmlFor="theta1Input">
 						<h5> &#952; = {}</h5>
 					</label>
-					<input type="text" name="theta-1-input" ref={thetaRef} />
+					<input type="text" name="theta1Input" ref={thetaRef} />
 					{thetaIsValid ? null : (
 						<h5 className="text-danger">
-							&theta; should be a decimal between 0 and 1.
+							&theta; should be a fraction or a decimal between 0 and 1.
 						</h5>
 					)}
 				</div>
@@ -65,7 +88,7 @@ export default function Form1(props) {
 						<h5> n = {}</h5>
 					</label>
 					<input type="number" name="n-input" ref={nRef} />
-					{thetaIsValid ? null : (
+					{nIsValid ? null : (
 						<h5 className="text-danger">
 							n should be a positive integer less than 51.
 						</h5>

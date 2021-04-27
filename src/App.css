@@ -41,6 +41,8 @@
 /* Styles for <Form1 /> */
 form {
 	text-align: left;
+	z-index: 1;
+	display: inline-block;
 }
 
 label {
@@ -66,4 +68,17 @@ label {
 
 .right-button {
 	margin-left: 50px;
+}
+
+/*Component transition styles */
+.inBack {
+	z-index: -1;
+	overflow: hidden;
+	display: inline-block;
+	background-color: aqua;
+}
+
+.inFront {
+	z-index: 1;
+	display: inline-block;
 }
