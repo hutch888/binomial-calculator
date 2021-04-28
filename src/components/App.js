@@ -6,7 +6,9 @@ import {
 } from "react-component-transition";
 import "../App.css";
 import { FirstPassage } from "./Passage";
+import { calculateBinomialPD, calculateCD } from "./MathFunctions";
 import Form1 from "./Form1";
+import ChartBox from "./ChartBox";
 
 function App() {
 	//const CSSTransitionGroup = addons.CSSTransitionGroup;
@@ -14,13 +16,58 @@ function App() {
 	const [theta1, setTheta1] = useState(0);
 	const [n1, setN1] = useState(0);
 	const [data1IsValid, setData1IsValid] = useState(false);
-	const [dropdown1IsOpen, setDropdown1IsOpen] = useState(false);
-
-	let testVar = false;
+	const [calculating, setCalculating] = useState(false);
+	const [probabilityDistribution, setProbabilityDistribution] = useState(null);
+	const [cumulativeDistribution, setCumulativeDistribution] = useState(null);
+	const [distributionsAreValid, setDistributionsAreValid] = useState(false);
 
 	useEffect(() => {
-		setDropdown1IsOpen(data1IsValid);
-	}, ["data1IsValid"]);
+		console.log(`In App useEffect, data1IsValid = ${data1IsValid}`);
+		if (data1IsValid) {
+			calculate(theta1, n1);
+		} else {
+			setProbabilityDistribution(null);
+			setCumulativeDistribution(null);
+		}
+	}, [data1IsValid]);
+
+	useEffect(() => {
+		console.log(
+			`In useEffect, probabilityDistribution = ${probabilityDistribution}`
+		);
+		console.log(
+			`In useEffect,  cumulativeDistribution = ${cumulativeDistribution}`
+		);
+
+		if (probabilityDistribution && cumulativeDistribution) {
+			setDistributionsAreValid(true);
+		} else {
+			setDistributionsAreValid(false);
+		}
+	}, [probabilityDistribution, cumulativeDistribution]);
+
+	const calculate = async (theta1, n1) => {
+		setCalculating(true);
+
+		let probDist = [];
+		var cumDist = [];
+
+		new Promise(function (resolve, reject) {
+			probDist = calculateBinomialPD(theta1, n1);
+			setProbabilityDistribution(probDist);
+			resolve(probDist);
+		})
+			.then(function (result) {
+				cumDist = calculateCD(result);
+				setCumulativeDistribution(cumDist);
+				return cumDist;
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+
+		setCalculating(false);
+	};
 
 	return (
 		<div className="App">
@@ -43,7 +90,13 @@ function App() {
 					animateContainerDuration={500}
 					className="inBack"
 				>
-					{data1IsValid ? <ChartBox /> : null}
+					{distributionsAreValid ? (
+						<ChartBox
+							probabilityDistribution={probabilityDistribution}
+							cumulativeDistribution={cumulativeDistribution}
+							calculating={calculating}
+						/>
+					) : null}
 				</ComponentTransition>
 				<h5 className="">{data1IsValid}</h5>
 			</div>

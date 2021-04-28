@@ -17,4 +17,24 @@ const FirstPassage = () => {
 	);
 };
 
-export { FirstPassage };
+const PDCaption = () => {
+	return (
+		<h5 className="caption">
+			The numbers along the horizontal axis are the possible number of
+			successes. The bar above each number represents the probability of getting
+			that number of successes.
+		</h5>
+	);
+};
+
+const CDCaption = () => {
+	return (
+		<h5 className="caption">
+			The numbers along the horizontal axis are the possible number of
+			successes. The bar above each number represents the probability of getting
+			that number <b>or fewer</b> successes.
+		</h5>
+	);
+};
+
+export { FirstPassage, PDCaption, CDCaption };

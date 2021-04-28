@@ -10,14 +10,6 @@ export default function Form1(props) {
 	const nRef = useRef();
 	const [thetaIsValid, setThetaIsValid] = useState(false);
 	const [nIsValid, setNIsValid] = useState(false);
-	//Flags to indicate whether the inputs are valid
-	/* 	var validationFlags = {
-		thetaIsValid: false,
-		nIsValid: false,
-	}; */
-
-	/* var thetaIsValid = false;
-	var nIsValid = false; */
 
 	const validate = (event) => {
 		event.preventDefault();
@@ -51,7 +43,11 @@ export default function Form1(props) {
 			setN1(n);
 		}
 		setData1IsValid(localThetaValidFlag && localNValidFlag);
-		console.log(`thetaIsValid = ${thetaIsValid} nIsValid = ${nIsValid}`);
+		console.log(
+			`In Form1, thetaIsValid = ${thetaIsValid} nIsValid = ${nIsValid} localThetaValidFlag && localNValidFlag = ${
+				localThetaValidFlag && localNValidFlag
+			}`
+		);
 	};
 
 	const clear = (event) => {
