@@ -90,7 +90,7 @@ function App() {
 					animateContainerDuration={500}
 					className="inBack"
 				>
-					{distributionsAreValid ? (
+					{distributionsAreValid && data1IsValid ? (
 						<ChartBox
 							probabilityDistribution={probabilityDistribution}
 							cumulativeDistribution={cumulativeDistribution}

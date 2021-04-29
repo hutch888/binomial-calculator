@@ -1,39 +1,55 @@
 import React, { useState, useEffect } from "react";
-import { Bar } from "react-chartjs-2";
+import { Bar, Chart } from "react-chartjs-2";
 
 export default function BarChart({ yValues, title }) {
-	const [data, setData] = useState({});
 	const xValues = [];
-	for (let i = 0; i <= yValues.length + 1; i++) {
+
+	for (let i = 0; i < yValues.length; i++) {
 		xValues[i] = i;
 	}
 
-	useEffect(() => {
-		setData({
-			labels: [0, 1, 2, 3],
-			dataSets: [
+	const data = {
+		labels: xValues,
+		datasets: [
+			{
+				label: "Probabilities",
+				backgroundColor: "rgba(75,192,192,1)",
+				borderColor: "rgba(0,0,0,1)",
+				borderWidth: 2,
+				hoverBackgroundColor: "rgba(255,99,132,0.4)",
+				hoverBorderColor: "rgba(255,99,132,1)",
+				data: yValues,
+			},
+		],
+	};
+
+	Chart.defaults.color = "black";
+	const options = {
+		//responive: true,
+		plugins: {
+			legend: {
+				display: false,
+			},
+			title: {
+				display: true,
+				text: title,
+				fontSize: 20,
+			},
+		},
+		scales: {
+			yAxes: [
 				{
-					label: "Probability of x successes",
-					backgroundColor: "rgba(75,192,192,1)",
-					borderWidth: 2,
-					data: yValues,
+					ticks: {
+						beginAtZero: true,
+					},
 				},
 			],
-		});
-	}, []);
+		},
+	};
 
 	return (
 		<div>
-			<Bar
-				data={data}
-				options={{
-					title: {
-						display: true,
-						text: title,
-						fontSize: 20,
-					},
-				}}
-			/>
+			<Bar data={data} options={options} />
 		</div>
 	);
 }

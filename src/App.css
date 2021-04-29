@@ -75,7 +75,7 @@ label {
 	z-index: -1;
 	overflow: hidden;
 	display: inline-block;
-	background-color: aqua;
+	background-color: lightgray;
 }
 
 .inFront {

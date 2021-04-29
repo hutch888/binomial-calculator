@@ -1,5 +1,4 @@
 import React from "react";
-
 import BarChart from "./BarChart";
 //import Table from "./Table";
 import { PDCaption, CDCaption } from "./Passage";
