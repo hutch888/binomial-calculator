@@ -1,3 +1,18 @@
+# Binomial Probability Calculator
+
+TL,DR : Given n and &theta;, this app generates a bar chart of a binomial probability distribution and of its corresponding cumulative distribution function.
+
+In probablity theory, a Bernoulli trial is any activity that
+
+- will have one of two results, usually called "success" and "failure".
+- has fixed probabilities for each outcome.
+
+For example, flipping a coin is a Bernoulli trial. It will result in either "heads" or "tails" and each of these outcomes has a probability of 0.5.
+
+If you repeat a Bernoulli trial some number of times, the probability of getting each possible number of successes is given by a binomial probabbility distribution. The probability of getting each possible number or fewer is given by a binomial cumulative distribution.
+
+This app takes as inputs &theta; the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

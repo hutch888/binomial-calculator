@@ -11,6 +11,7 @@ import Form1 from "./Form1";
 import Form2 from "./Form2";
 import ChartBox from "./ChartBox";
 import MathBox1 from "./MathBox1";
+import Footer from "./Footer";
 
 function App() {
 	const [theta1, setTheta1] = useState(0);
@@ -103,6 +104,7 @@ function App() {
 					{showMath ? <MathBox1 /> : null}
 				</ComponentTransition>
 			</div>
+			<Footer />
 		</div>
 	);
 }
