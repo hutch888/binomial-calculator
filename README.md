@@ -13,7 +13,7 @@ If you repeat a Bernoulli trial some number of times, the probability of getting
 
 This app takes as inputs &theta; ,the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution.
 
-This app was created using [Create React App](https://github.com/facebook/create-react-app) and [Chart.js](https://www.chartjs.org/). My heartfelt thanks go to the hardwroking, talented developers behind those projects. 
+This app was created using [Create React App](https://github.com/facebook/create-react-app) and [Chart.js](https://www.chartjs.org/). My heartfelt thanks go to the hard-working, talented developers behind those projects. 
 
 # Getting Started with Create React App
 
