@@ -9,9 +9,11 @@ In probablity theory, a Bernoulli trial is any activity that
 
 For example, flipping a coin is a Bernoulli trial. It will result in either "heads" or "tails" and each of these outcomes has a probability of 0.5.
 
-If you repeat a Bernoulli trial some number of times, the probability of getting each possible number of successes is given by a binomial probabbility distribution. The probability of getting each possible number or fewer is given by a binomial cumulative distribution.
+If you repeat a Bernoulli trial some number of times, the probability of getting each possible number of successes is given by a binomial probability distribution. The probability of getting each possible number or fewer is given by a binomial cumulative distribution.
 
-This app takes as inputs &theta; the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution.
+This app takes as inputs &theta; ,the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution.
+
+This app was created using [Create React App](https://github.com/facebook/create-react-app) and [Chart.js](https://www.chartjs.org/). My heartfelt thanks go to the hardwroking, talented developers behind those projects. 
 
 # Getting Started with Create React App
 
