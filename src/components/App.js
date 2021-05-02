@@ -8,11 +8,11 @@ import "../App.css";
 import { FirstPassage } from "./Passage";
 import { calculateBinomialPD, calculateCD } from "./MathFunctions";
 import Form1 from "./Form1";
+import Form2 from "./Form2";
 import ChartBox from "./ChartBox";
+import MathBox1 from "./MathBox1";
 
 function App() {
-	//const CSSTransitionGroup = addons.CSSTransitionGroup;
-	//const TransitionGroup = React.addons.TransitionGroup;
 	const [theta1, setTheta1] = useState(0);
 	const [n1, setN1] = useState(0);
 	const [data1IsValid, setData1IsValid] = useState(false);
@@ -20,25 +20,21 @@ function App() {
 	const [probabilityDistribution, setProbabilityDistribution] = useState(null);
 	const [cumulativeDistribution, setCumulativeDistribution] = useState(null);
 	const [distributionsAreValid, setDistributionsAreValid] = useState(false);
+	const [showMath, setShowMath] = useState(false);
 
 	useEffect(() => {
-		console.log(`In App useEffect, data1IsValid = ${data1IsValid}`);
+		console.log(
+			`In App useEffect, data1IsValid = ${data1IsValid}, theta1=${theta1}, n1=${n1}`
+		);
 		if (data1IsValid) {
 			calculate(theta1, n1);
 		} else {
 			setProbabilityDistribution(null);
 			setCumulativeDistribution(null);
 		}
-	}, [data1IsValid]);
+	}, [data1IsValid, theta1, n1]);
 
 	useEffect(() => {
-		console.log(
-			`In useEffect, probabilityDistribution = ${probabilityDistribution}`
-		);
-		console.log(
-			`In useEffect,  cumulativeDistribution = ${cumulativeDistribution}`
-		);
-
 		if (probabilityDistribution && cumulativeDistribution) {
 			setDistributionsAreValid(true);
 		} else {
@@ -88,7 +84,7 @@ function App() {
 					enterAnimation={AnimationTypes.slideLeft.enter}
 					exitAnimation={AnimationTypes.slideRight.exit}
 					animateContainerDuration={500}
-					className="inBack"
+					//className="inBack"
 				>
 					{distributionsAreValid && data1IsValid ? (
 						<ChartBox
@@ -98,7 +94,14 @@ function App() {
 						/>
 					) : null}
 				</ComponentTransition>
-				<h5 className="">{data1IsValid}</h5>
+				<Form2 showMath={showMath} setShowMath={setShowMath} />
+				<ComponentTransition
+					enterAnimation={AnimationTypes.slideRight.enter}
+					exitAnimation={AnimationTypes.slideLeft.exit}
+					animateContainerDuration={500}
+				>
+					{showMath ? <MathBox1 /> : null}
+				</ComponentTransition>
 			</div>
 		</div>
 	);

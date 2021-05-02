@@ -13,6 +13,8 @@
     "react-chartjs-2": "^3.0.2",
     "react-component-transition": "^2.0.1",
     "react-dom": "^16.8.0",
+    "react-katex": "^2.0.2",
+    "react-latex": "^2.0.0",
     "react-scripts": "^2.1.1",
     "web-vitals": "^1.1.1"
   },

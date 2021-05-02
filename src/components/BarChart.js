@@ -12,7 +12,7 @@ export default function BarChart({ yValues, title }) {
 		labels: xValues,
 		datasets: [
 			{
-				label: "Probabilities",
+				label: "Probability",
 				backgroundColor: "rgba(75,192,192,1)",
 				borderColor: "rgba(0,0,0,1)",
 				borderWidth: 2,
@@ -25,7 +25,7 @@ export default function BarChart({ yValues, title }) {
 
 	Chart.defaults.color = "black";
 	const options = {
-		//responive: true,
+		responive: true,
 		plugins: {
 			legend: {
 				display: false,
@@ -33,7 +33,9 @@ export default function BarChart({ yValues, title }) {
 			title: {
 				display: true,
 				text: title,
-				fontSize: 20,
+				font: {
+					size: 20,
+				},
 			},
 		},
 		scales: {
@@ -48,7 +50,7 @@ export default function BarChart({ yValues, title }) {
 	};
 
 	return (
-		<div>
+		<div className="bar-chart">
 			<Bar data={data} options={options} />
 		</div>
 	);

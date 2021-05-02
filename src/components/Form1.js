@@ -18,10 +18,10 @@ export default function Form1(props) {
 		const nString = nRef.current.value;
 		let localThetaValidFlag = false;
 		let localNValidFlag = false;
-
 		//Convert string values to numbers
 		let theta = convertTheta(thetaString);
 		let n = parseInt(nString, 10);
+		console.log(`In Form1, theta = ${theta} n = ${n}`);
 
 		if (!isNaN(theta) && theta > 0 && theta < 1) {
 			setThetaIsValid(true);
@@ -94,7 +94,7 @@ export default function Form1(props) {
 					<input
 						type="submit"
 						className="btn btn-secondary left-button"
-						value="Submit"
+						value="Enter"
 					/>
 					<button className="btn btn-secondary right-button" onClick={clear}>
 						Clear

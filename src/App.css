@@ -71,14 +71,26 @@ label {
 }
 
 /*Component transition styles */
-.inBack {
+.bar-chart {
 	z-index: -1;
 	overflow: hidden;
-	display: inline-block;
+	/*display: inline-block; */
 	background-color: lightgray;
+	margin: 5px;
 }
 
 .inFront {
 	z-index: 1;
 	display: inline-block;
+}
+
+.chart-box-caption {
+	color: purple;
+}
+
+/* Math window styles */
+.math-box1 {
+	background-color: aliceblue;
+	font-family: "Times New Roman", serif;
+	padding: 8px;
 }
