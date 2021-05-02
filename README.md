@@ -11,7 +11,7 @@ For example, flipping a coin is a Bernoulli trial. It will result in either "hea
 
 If you repeat a Bernoulli trial some number of times, the probability of getting each possible number of successes is given by a binomial probability distribution. The probability of getting each possible number or fewer is given by a binomial cumulative distribution.
 
-This app takes as inputs &theta; ,the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution.
+This app takes as inputs &theta; ,the probabilty of success for a Bernoulli trial, and n, the number of times the trial is repeated. It returns a binomial distribution and a binomial cumulative distribution. You can try it out [here](https://hutch888.github.io/binomial-calculator/).
 
 This app was created using [Create React App](https://github.com/facebook/create-react-app) and [Chart.js](https://www.chartjs.org/). My heartfelt thanks go to the hard-working, talented developers behind those projects. 
 
