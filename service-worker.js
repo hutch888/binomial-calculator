@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/binomial-calculator/precache-manifest.b39af2561f4f65c6314504da0b177c8a.js"
+  "/binomial-calculator/precache-manifest.1d49322a5d7c830eeecce57633e11583.js"
 );
 
 workbox.clientsClaim();

@@ -1,35 +1,35 @@
 self.__precacheManifest = [
   {
-    "revision": "6ece47dcd14039a54cd1",
-    "url": "/binomial-calculator/static/css/main.46b18598.chunk.css"
+    "revision": "1b52dbfc79917b7fea89",
+    "url": "/binomial-calculator/static/css/main.5be8188c.chunk.css"
   },
   {
-    "revision": "6ece47dcd14039a54cd1",
-    "url": "/binomial-calculator/static/js/main.07305572.chunk.js"
+    "revision": "1b52dbfc79917b7fea89",
+    "url": "/binomial-calculator/static/js/main.a7d40961.chunk.js"
   },
   {
     "revision": "9a9e0620100e15d14c1b",
     "url": "/binomial-calculator/static/js/runtime~main.8ccc8688.js"
   },
   {
-    "revision": "59c15a808eed9ce23c40",
-    "url": "/binomial-calculator/static/css/2.752e44c1.chunk.css"
+    "revision": "0752eb443c0e7ddaa03b",
+    "url": "/binomial-calculator/static/css/2.98e87346.chunk.css"
   },
   {
-    "revision": "59c15a808eed9ce23c40",
-    "url": "/binomial-calculator/static/js/2.0781a880.chunk.js"
+    "revision": "0752eb443c0e7ddaa03b",
+    "url": "/binomial-calculator/static/js/2.13317ad6.chunk.js"
   },
   {
     "revision": "2ee6990af1da7a3fbd07",
     "url": "/binomial-calculator/static/js/3.e9edcf7d.chunk.js"
   },
   {
-    "revision": "7f06b4e30317f784d61d26686aed0ab2",
-    "url": "/binomial-calculator/static/media/KaTeX_AMS-Regular.7f06b4e3.woff"
-  },
-  {
     "revision": "e78e28b4834954df047e4925e9dbf354",
     "url": "/binomial-calculator/static/media/KaTeX_AMS-Regular.e78e28b4.woff2"
+  },
+  {
+    "revision": "7f06b4e30317f784d61d26686aed0ab2",
+    "url": "/binomial-calculator/static/media/KaTeX_AMS-Regular.7f06b4e3.woff"
   },
   {
     "revision": "aaf4eee9fba9907d61c3935e0b6a54ae",
@@ -52,12 +52,12 @@ self.__precacheManifest = [
     "url": "/binomial-calculator/static/media/KaTeX_Caligraphic-Regular.7edb53b6.woff2"
   },
   {
-    "revision": "d3b46c3a530116933081d9d74e3e9fe8",
-    "url": "/binomial-calculator/static/media/KaTeX_Caligraphic-Regular.d3b46c3a.woff"
-  },
-  {
     "revision": "d49f2d55ce4f40f982d8ba63d746fbf9",
     "url": "/binomial-calculator/static/media/KaTeX_Caligraphic-Regular.d49f2d55.ttf"
+  },
+  {
+    "revision": "d3b46c3a530116933081d9d74e3e9fe8",
+    "url": "/binomial-calculator/static/media/KaTeX_Caligraphic-Regular.d3b46c3a.woff"
   },
   {
     "revision": "d5b59ec9764e10f4a82369ae29f3ac58",
@@ -156,12 +156,12 @@ self.__precacheManifest = [
     "url": "/binomial-calculator/static/media/KaTeX_Math-Italic.291e76b8.ttf"
   },
   {
-    "revision": "3fb419559955e3ce75619f1a5e8c6c84",
-    "url": "/binomial-calculator/static/media/KaTeX_SansSerif-Bold.3fb41955.woff"
-  },
-  {
     "revision": "6e0830bee40435e72165345e0682fbfc",
     "url": "/binomial-calculator/static/media/KaTeX_SansSerif-Bold.6e0830be.woff2"
+  },
+  {
+    "revision": "3fb419559955e3ce75619f1a5e8c6c84",
+    "url": "/binomial-calculator/static/media/KaTeX_SansSerif-Bold.3fb41955.woff"
   },
   {
     "revision": "7dc027cba9f7b11ec92af4a311372a85",
@@ -264,7 +264,7 @@ self.__precacheManifest = [
     "url": "/binomial-calculator/static/media/KaTeX_Typewriter-Regular.25702356.ttf"
   },
   {
-    "revision": "6217c9d27cdf2cfbc19920fca2c902b6",
+    "revision": "e748338956ea80ba1dec05a97619e2f6",
     "url": "/binomial-calculator/index.html"
   }
 ];
